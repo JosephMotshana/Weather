@@ -8,7 +8,7 @@ import requests
 
 # Load environment variables
 load_dotenv()
-api_key = os.getenv("WEATHER_API_KEY")
+api_key = os.getenv("94883ee50707050a662509a66ec8d1aa")
 
 # Function to fetch weather data
 def get_weather_forecast(location, months=1):
@@ -56,7 +56,7 @@ def crop_recommendations(forecast_df):
 # Streamlit dashboard function
 def display_dashboard(forecast_df):
     st.title("Weather-Based Crop Recommendation System")
-    st.write("Location: New York")
+    st.write("Location: Pretoria")
 
     # Display the weather forecast data
     st.write("Weather Forecast for the Next Months:")
@@ -76,7 +76,7 @@ def display_dashboard(forecast_df):
         st.write(f"{row['date'].strftime('%Y-%m-%d')}: {row['Recommended Crops']}")
 
 # Main execution
-location = "New York"  # You can change this to any location
+location = "Pretoria"  # You can change this to any location
 forecast_df = get_weather_forecast(location, months=1)
 if not forecast_df.empty:
     forecast_df = crop_recommendations(forecast_df)
